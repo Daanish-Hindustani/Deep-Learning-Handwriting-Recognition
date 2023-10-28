@@ -1,39 +1,45 @@
 # Neural Network Number Classifier
+Introduction:
+This project presents an implementation of a neural network, authored in pure Python and Numpy, designed for the purpose of classifying 28x28 pixel images depicting numbers ranging from 0 to 9.
 
-This project represents an exploration into the world of neural networks, showcasing a practical application of machine learning. Our primary objective was to create a neural network capable of classifying handwritten numbers, such as those found in documents and digital images.
+Implementation:
+Within the scope of the MNIST dataset, a total of 60,000 training data points were employed. A split of 80% was designated for the training dataset, while the remaining 20% was allocated for testing. The neural network's weights were initialized with random values, and biases were set to zero. The training process involved three epochs, with a learning rate set at 0.001.
+
+Architecture:
+This neural network is structured with three layers: an input layer, an output layer, and a hidden layer. The hidden layer employs the sigmoid activation function, while the backpropagation process leverages the gradient descent algorithm.
+
+Results:
+
+Training Accuracy (90%): The training accuracy of 90% indicates that, during the training process, our neural network correctly predicted the labels for 90% of the training data. This accuracy is computed using the following formula:
+
+Training Accuracy = (Number of Correct Predictions / Total Training Samples) * 100
+
+In our case, if we had 60,000 training samples, it means our network made approximately 54,000 correct predictions during training.
+
+Testing Accuracy (93%): The testing accuracy of 93% signifies that our trained neural network was able to correctly classify 93% of the previously unseen testing data. This accuracy is calculated in a similar manner as the training accuracy.
+
+Testing Accuracy = (Number of Correct Predictions / Total Testing Samples) * 100
+
+If, for instance, we had 10,000 testing samples, this accuracy implies that our network made around 9,300 correct predictions on the testing data.
+
+Conclusion:
+
+In the conclusion, we can discuss potential improvements to enhance the neural network's performance. Here are some mathematical insights:
+
+Rectified Linear Unit (ReLU): Replacing the sigmoid activation function in the hidden layer with the Rectified Linear Unit (ReLU) can be beneficial. The ReLU activation function is defined as follows:
+
+ReLU(x) = max(0, x)
+
+This activation function often leads to faster convergence and mitigates the vanishing gradient problem, which can result in more efficient training.
+
+Cost Function Enhancement: The choice of cost function plays a critical role in training neural networks. One commonly used cost function for classification tasks is the Cross-Entropy Loss, defined as:
+
+Cross-Entropy Loss = -Σ(y_i * log(p_i) + (1 - y_i) * log(1 - p_i))
+
+Where y_i represents the true label, p_i is the predicted probability, and the summation runs over all classes. Optimizing the choice and adaptation of this cost function can potentially lead to better convergence and accuracy.
+
+By incorporating these enhancements and further fine-tuning hyperparameters, the neural network's classification performance can be significantly improved, and the accuracy can be further elevated. This underscores the iterative and data-driven nature of improving neural network models.
 
 
-## Implementation
-
-Here's an overview of the key steps involved in this project's implementation:
-
-### Data Preprocessing
-
-1. **Data Collection:** We began by sourcing the MNIST dataset, a widely-used resource in the machine learning community. It contains a vast collection of 28x28 grayscale images, each representing a handwritten digit from 0 to 9. This dataset serves as the foundation for training and evaluating our model.
-
-2. **Data Split:** The MNIST dataset is neatly divided into a training set and a test set. The training set is used to teach our neural network, while the test set is reserved to assess how well the model can perform on unseen data.
-
-### Model Development
-
-3. **Villia Python:** For constructing and training our neural network, we opted for just plain python. I also used numpy.
-
-4. **Architecture Design:** The heart of our neural network is its architecture. This encompasses the design of input layers, hidden layers, and output layers. These layers work collaboratively to learn and predict the numbers within the input images.
-
-### Training the Model
-
-5. **Backpropagation:** A fundamental concept in training neural networks is backpropagation. This iterative process fine-tunes the network's internal parameters, such as weights and biases, to minimize the error between predicted and actual values.
-
-6. **Training Process:** The actual training phase involves feeding the neural network with images from the training dataset. After each pass, the model's performance is assessed, enabling us to gauge its accuracy. This process is repeated until the model achieves satisfactory levels of accuracy and can confidently classify handwritten numbers.
 
 
-## Usage
-
-Our trained model can be used to classify new images of handwritten digits by providing these images as input to the model. Additionally, you have the flexibility to integrate this model into your own applications for digit recognition, simplifying tasks that involve recognizing and categorizing numbers.
-
-## Contributing
-
-If you're enthusiastic about enhancing this project, fixing any existing issues, or introducing new features, please don't hesitate to get involved. Feel free to open discussions, suggest improvements, or submit pull requests – your contributions are most welcome.
-
-## License
-
-This project is licensed under the MIT License. Additional information is available in the [LICENSE](LICENSE) file.
